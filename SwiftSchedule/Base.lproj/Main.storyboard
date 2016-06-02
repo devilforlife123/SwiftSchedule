@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xst-lq-AqZ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Schedule View Controller-->
+        <scene sceneID="kDt-7c-6jw">
+            <objects>
+                <collectionViewController id="DI7-g7-IH0" customClass="ScheduleViewController" customModule="SwiftSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="czz-K6-NcJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="RPy-Ax-2LL" customClass="ScheduleLayout" customModule="SwiftSchedule" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScheduleCell" id="nPf-2H-9DM" customClass="ScheduleCell" customModule="SwiftSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ey2-h6-pj1">
+                                            <rect key="frame" x="1" y="1" width="138" height="138"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-qt-i4q">
+                                                    <rect key="frame" x="4" y="4" width="130" height="130"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.21960784310000001" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Zgh-qt-i4q" secondAttribute="trailing" constant="4" id="Dj6-P5-rpJ"/>
+                                                <constraint firstItem="Zgh-qt-i4q" firstAttribute="leading" secondItem="ey2-h6-pj1" secondAttribute="leading" constant="4" id="SH6-BY-TPz"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zgh-qt-i4q" secondAttribute="bottom" constant="4" id="f6x-J5-xOw"/>
+                                                <constraint firstItem="Zgh-qt-i4q" firstAttribute="top" secondItem="ey2-h6-pj1" secondAttribute="top" constant="4" id="u8O-yG-rrn"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ey2-h6-pj1" secondAttribute="bottom" constant="1" id="DJb-Rk-429"/>
+                                    <constraint firstItem="ey2-h6-pj1" firstAttribute="top" secondItem="nPf-2H-9DM" secondAttribute="top" constant="1" id="hh6-fk-PTD"/>
+                                    <constraint firstItem="ey2-h6-pj1" firstAttribute="leading" secondItem="nPf-2H-9DM" secondAttribute="leading" constant="1" id="ld8-MN-fhI"/>
+                                    <constraint firstAttribute="trailing" secondItem="ey2-h6-pj1" secondAttribute="trailing" constant="1" id="yIO-Hk-KBA"/>
+                                </constraints>
+                                <size key="customSize" width="140" height="140"/>
+                                <connections>
+                                    <outlet property="itemBackgroundView" destination="ey2-h6-pj1" id="7NY-2b-ofu"/>
+                                    <outlet property="nameLabel" destination="Zgh-qt-i4q" id="8EM-IP-g7A"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Iec-tm-Jgd" id="ZfZ-dJ-lss"/>
+                            <outlet property="delegate" destination="DI7-g7-IH0" id="63b-Xr-yFl"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="z4H-Kq-Sgu"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yc8-n9-RTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Iec-tm-Jgd" customClass="ScheduleDataSource" customModule="SwiftSchedule" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1120" y="298"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KU1-8A-FBy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xst-lq-AqZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ztu-Lj-cGL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DI7-g7-IH0" kind="relationship" relationship="rootViewController" id="pZH-0b-eWm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkr-Tm-4A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="298"/>
+        </scene>
+    </scenes>
+</document>
